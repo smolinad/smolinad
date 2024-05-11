@@ -1,2 +1,0 @@
-- 👋 Hi, I’m @smolinad
-- 👀 I’m interested in Machine Learning and Data Analysis.
