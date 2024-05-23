@@ -1,0 +1,88 @@
+---
+
+interface Props {
+	name: string;
+    institution: string;
+    position: string;
+}
+
+const { name, institution, position } = Astro.props;
+
+import Me from '../../public/img/me.png'
+---
+
+<div class="flex flex-col justify-center items-center md:flex-row">
+    <div class="order-1 justify-center items-center md:ml-4">
+        <img alt="Sebastian's Memoji" src={Me.src} draggable="false" class="size-20 rounded-full object-cover mt-4">
+    </div>
+
+    <div class="md:ml-5 justify-center items-center order-2 my-6">
+        <h1 class="text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent 
+        from-green-200 via-orange-200 to-orange-300 animation-fontWidth" id="greeting"></h1>
+        <h1 class="text-3xl font-bold mt-2 animation-fontWidth">
+            I'm {name}
+        </h1>
+        <h2 class="text-xl text-white opacity-70" >Data Science | ML</h2>
+    </div>
+    
+    <div class="flex justify-center order-3 md:flex-1 md:ml-auto md:pt-6">
+        <span class="relative inline-flex overflow-hidden rounded-full p-[1px]"> 
+            <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"></span> 
+            <div class="inline-flex items-center justify-center w-full px-3 py-1.5 text-sm text-green-600 bg-green-200 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap"> 
+                {institution} · {position}
+            </div>
+         </span>
+    </div>
+</div>
+
+
+    
+<script>
+    const greetings: string[] = [
+        "Hello!",        // English
+        "¡Hola!",        // Spanish
+        "Bonjour!",      // French
+        "Hallo!",        // German
+        "Ciao!",         // Italian
+        "Olá!",          // Portuguese
+        "Привет!",       // Russian
+        "你好!",          // Chinese
+        "こんにちは!",     // Japanese
+        "안녕하세요!",      // Korean
+        "नमस्ते!",        // Hindi
+        "!مرحبا",        // Arabic
+        "!שלום",         // Hebrew
+        "Habari!",       // Swahili
+        "Merhaba!",      // Turkish
+        "Γειά σου!",     // Greek
+        "สวัสดี!",        // Thai
+        "Xin chào!",     // Vietnamese
+        "Hallo!",        // Dutch
+        "Hej!",          // Swedish
+        "Hei!",          // Norwegian
+        "Hei!",          // Finnish
+        "Hej!",          // Danish
+        "Cześć!",        // Polish
+        "Ahoj!",         // Czech
+        "Szia!",         // Hungarian
+        "Salut!",        // Romanian
+        "Halo!",         // Indonesian
+        "Hai!",          // Malay
+        "Kamusta!"       // Filipino
+    ];
+
+
+    function updateGreeting() {
+        const greetingElement = document.getElementById('greeting');
+        if (greetingElement) {
+            const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+            greetingElement.textContent = randomGreeting;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        updateGreeting();
+        setInterval(updateGreeting, 2000);
+    });
+</script>
+

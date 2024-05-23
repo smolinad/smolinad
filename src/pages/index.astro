@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import Hello from '../components/Hello.astro';
+
+
+
+import Timeline from '../components/Timeline.astro';
+import CVEntry from '../components/CVEntry.astro';
+import Section from '../components/Section.astro';
+---
+
+<Layout title="Sebastian Molina - @smolinad">
+	<main>
+		<Section class="py-40 pb-10">
+			<Hello name="Sebastian Molina" institution="UNAL" position="Research Assistant"/>	
+
+			<h2 class="text-white mt-8">
+				Computer Scientist from Universidad Nacional de Colombia. Interested in the explainability, interpretability, and fairness of ML models. Looking for new forms of interactability and reproducibility using <span class="text-green-200"><a href="https://marimo.io/"><tt>Marimo</tt></a></span> and <span class="text-green-200"><a href="https://plutojl.org/"><tt>Pluto.jl</tt></a></span>.
+			</h2>
+		</Section>
+	</main>
+</Layout>
+
